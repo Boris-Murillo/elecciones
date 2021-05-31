@@ -56,15 +56,15 @@
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Apellido </label> <input type="text" value="<c:out value='${candidato.apellido}' />" class="form-control" name="apellido">
+                            <label>Apellido </label> <input type="text" value="<c:out value='${candidato.apellido}' />" class="form-control" name="apellido"  >
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Eleccion </label> <input type="text" value="<c:out value='${candidato.eleccion}' />" class="form-control" name="eleccion">
+                            <label>Eleccion </label> <input type="number" value="<c:out value='${candidato.eleccion}' />" class="form-control" name="eleccion" required="required">
                         </fieldset>
                         
                         <fieldset class="form-group">
-                            <label>Numero</label> <input type="text" value="<c:out value='${candidato.numero}' />" class="form-control" name="numero">
+                            <label>Numero</label> <input type="number" value="<c:out value='${candidato.numero}' />" class="form-control" name="numero" required="required">
                         </fieldset>
 
                         <button type="submit" class="btn btn-success">Guardar</button>
