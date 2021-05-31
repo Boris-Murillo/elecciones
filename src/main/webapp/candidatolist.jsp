@@ -13,11 +13,11 @@
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark" style=" background-color: pink ">
 			<div>
-                <a href="#" class="navbar-brand"> Gestión Ciclistas </a>
+                <a href="#" class="navbar-brand"> Gestión Candidatos </a>
             </div>
             
             <ul class="navbar-nav">
-            	<li><a href="<%=request.getContextPath()%>/list" class="nav-link">Ciclistas</a></li>
+            	<li><a href="<%=request.getContextPath()%>/list" class="nav-link">Candidatos</a></li>
             </ul>
 		
 		</nav>
@@ -27,48 +27,49 @@
 	<div class="row">
            
                 <div class="container">
-                    <h3 class="text-center">Listado de Ciclistas</h3>
+                    <h3 class="text-center">Listado de Candidatos</h3>
                     <hr>
                     <div class="container text-left">
 
-                        <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Agregar Nuevo Ciclista</a>
+                        <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Agregar Nuevo Candidato</a>
                     </div>
                     <br>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Documento</th>
                                 <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Pais</th>
-                                <th>Team</th>
-                                <th>Acciones</th>
+                                <th>Apellido</th>
+                                <th>Eleccion</th>
+                                <th>Numero</th>
+                                <th>Editar o Eliminar </th>
                             </tr>
                         </thead>
                         <tbody>
                             <!--   for (Todo todo: todos) {  -->
-                            <c:forEach var="cyclist" items="${listCyclists}">
+                            <c:forEach var="candidato" items="${listCandidatos}">
 
                                 <tr>
                                     <td>
-                                        <c:out value="${cyclist.id}" />
+                                        <c:out value="${candidato.id}" />
+                                    </td>
+                                     <td>
+                                        <c:out value="${candidato.documento}" />
                                     </td>
                                     <td>
-                                        <c:out value="${cyclist.nombre}" />
+                                        <c:out value="${candidato.nombre}" />
                                     </td>
                                     <td>
-                                        <c:out value="${cyclist.email}" />
+                                        <c:out value="${candidato.apellido}" />
                                     </td>
                                     <td>
-                                        <c:out value="${cyclist.pais}" />
+                                        <c:out value="${candidato.eleccion}" />
                                     </td>
                                     <td>
-                                        <c:out value="${cyclist.team}" />
+                                        <c:out value="${candidato.numero}" />
                                     </td>
-                                   <%--  <td>
-                                        <c:out value="${cyclist.fecha}" />
-                                    </td> --%>
-                                    <td><a href="edit?id=<c:out value='${cyclist.id}' />">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${cyclist.id}' />">Eliminar</a></td>
+                                    <td><a href="edit?id=<c:out value='${candidato.id}' />">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${candidato.id}' />">Eliminar</a></td>
                                 </tr>
                             </c:forEach>
                             <!-- } -->
